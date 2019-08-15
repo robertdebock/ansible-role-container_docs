@@ -1,0 +1,4 @@
+---
+repository:
+  description: Change package manager configuration to install docs and manpages.
+  homepage: https://robertdebock.nl/

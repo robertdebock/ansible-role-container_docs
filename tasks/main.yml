@@ -1,0 +1,23 @@
+---
+# tasks file for container_docs
+- name: unset nodocs flag in yum.conf
+  replace:
+    path: /etc/yum.conf
+    regexp: nodocs
+  when:
+    - ansible_pkg_mgr == "yum"
+
+- name: unset nodocs flag in dnf.conf
+  replace:
+    path: /etc/dnf/dnf.conf
+    regexp: nodocs
+  when:
+    - ansible_pkg_mgr == "dnf"
+
+- name: unset excludes /usr/share/doc in dpkg.cfg.d/excludes
+  replace:
+    path: /etc/dpkg/dpkg.cfg.d/excludes
+    regexp: '^(path-exclude=.*)'
+    replace: '#\1'
+  when:
+    - ansible_pkg_mgr == "apt"

@@ -1,0 +1,8 @@
+---
+# handlers file for container_docs
+- name: restart container_docs
+  service:
+    name: "{{ container_docs_service }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"
