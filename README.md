@@ -6,6 +6,9 @@ container_docs
 
 Change package manager configuration to install docs and manpages.
 
+<img src="https://img.shields.io/ansible/role/d/42790"/>
+<img src="https://img.shields.io/ansible/quality/42790"/>
+
 Example Playbook
 ----------------
 
@@ -85,7 +88,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|yes|yes|yes*|
 |alpine-latest|yes|yes|yes*|
 |archlinux|yes|yes|yes*|
-|centos-6|yes|yes|yes*|
+|centos-7|yes|yes|yes*|
 |centos-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
