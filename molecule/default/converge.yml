@@ -5,4 +5,4 @@
   gather_facts: yes
 
   roles:
-    - ansible-role-container_docs
+    - role: ansible-role-container_docs
