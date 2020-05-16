@@ -17,7 +17,7 @@
 - name: status of /etc/dpkg/dpkg.cfg.d/excludes
   stat:
     path: /etc/dpkg/dpkg.cfg.d/excludes
-  register: status_of_etc_dpkg_dpkg_cfg_d_excludes
+  register: container_docs_status_of_etc_dpkg_dpkg_cfg_d_excludes
 
 - name: unset excludes /usr/share/doc in dpkg.cfg.d/excludes
   replace:
@@ -26,4 +26,4 @@
     replace: '#\1'
   when:
     - ansible_pkg_mgr == "apt"
-    - status_of_etc_dpkg_dpkg_cfg_d_excludes.stat.exists
+    - container_docs_status_of_etc_dpkg_dpkg_cfg_d_excludes.stat.exists
