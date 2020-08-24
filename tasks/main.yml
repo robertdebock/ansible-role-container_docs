@@ -4,6 +4,7 @@
   replace:
     path: /etc/yum.conf
     regexp: nodocs
+    mode: "0640"
   when:
     - ansible_pkg_mgr == "yum"
 
@@ -11,6 +12,7 @@
   replace:
     path: /etc/dnf/dnf.conf
     regexp: nodocs
+    mode: "0640"
   when:
     - ansible_pkg_mgr == "dnf"
 
@@ -24,6 +26,7 @@
     path: /etc/dpkg/dpkg.cfg.d/excludes
     regexp: '^(path-exclude=.*)'
     replace: '#\1'
+    mode: "0640"
   when:
     - ansible_pkg_mgr == "apt"
     - container_docs_status_of_etc_dpkg_dpkg_cfg_d_excludes.stat.exists
