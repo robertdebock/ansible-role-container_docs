@@ -1,5 +1,6 @@
 ---
 # tasks file for container_docs
+
 - name: unset nodocs flag in yum.conf
   replace:
     path: /etc/yum.conf
