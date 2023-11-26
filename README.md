@@ -1,4 +1,4 @@
-# Ansible role [container_docs](#container_docs)
+# [Ansible role container_docs](#container_docs)
 
 Change package manager configuration to install docs and manpages.
 
