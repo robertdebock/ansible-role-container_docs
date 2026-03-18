@@ -7,7 +7,7 @@
     regexp: nodocs
     mode: "0640"
   when:
-    - ansible_pkg_mgr == "yum"
+    - ansible_facts['pkg_mgr'] == "yum"
 
 - name: Unset nodocs flag in dnf.conf
   ansible.builtin.replace:
@@ -15,7 +15,7 @@
     regexp: nodocs
     mode: "0640"
   when:
-    - ansible_pkg_mgr in [ "dnf", "dnf5" ]
+    - ansible_facts['pkg_mgr'] in [ "dnf", "dnf5" ]
 
 - name: Status of /etc/dpkg/dpkg.cfg.d/excludes
   ansible.builtin.stat:
@@ -29,5 +29,5 @@
     replace: '#\1'
     mode: "0640"
   when:
-    - ansible_pkg_mgr == "apt"
+    - ansible_facts['pkg_mgr'] == "apt"
     - container_docs_status_of_etc_dpkg_dpkg_cfg_d_excludes.stat.exists
